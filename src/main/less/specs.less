@@ -1,16 +1,24 @@
+@testobjectBlue: #08c;
+@testobjectBlueHover: #007dbb;
+@testobjectBlueActive: #1d4c99;
+
+
 .swagger-section {
+
+    background: #e9e9e9;
 
 .swagger-ui-wrap {
 
+    position: relative;
     line-height: 1;
-    font-family: "Droid Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     min-width: 760px;
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
 
     b, strong {
-        font-family: "Droid Sans", sans-serif;
+        font-family: "Open Sans", sans-serif;
         font-weight: bold;
     }
 
@@ -50,7 +58,8 @@
                     padding: 5px;
                     font-size: 0.9em;
                     color: #666666;
-                    border-bottom: 1px solid #999999;
+                    border-bottom: 1px solid #ccc;
+                    text-transform: uppercase;
                 }
             }
         }
@@ -67,7 +76,7 @@
                 td {
                     padding: 6px;
                     font-size: 0.9em;
-                    border-bottom: 1px solid #cccccc;
+                    border-bottom: 1px solid #ccc;
                     vertical-align: top;
                     line-height: 1.3em;
                 }
@@ -114,7 +123,7 @@
     }
 
     pre {
-        font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+        font-family: "Source Code Pro", monospace;
         background-color: #fcf6db;
         border: 1px solid #e5e0c6;
         padding: 10px;
@@ -149,13 +158,13 @@
     }
 
     .info_title {
-        padding-bottom: 10px;
-        font-weight: bold;
-        font-size: 25px;
+        padding-bottom: 20px;
+        font-size: 32px;
+        color: #444;
     }
 
     .footer {
-        margin-top: 20px;
+        margin-top: 40px;
     }
 
     p.big, div.big p {
@@ -194,7 +203,6 @@
     }
 
     .info_description {
-        padding-bottom: 10px;
         font-size: 15px;
     }
 
@@ -223,7 +231,7 @@
     }
 
     .model-signature {
-        font-family: "Droid Sans", sans-serif;
+        font-family: "Open Sans", sans-serif;
         font-size: 1em;
         line-height: 1.5em;
         .signature-nav {
@@ -243,15 +251,17 @@
         .propType {
             color: #5555aa;
         }
-        pre:hover {
-            background-color: #ffffdd;
-        }
         pre {
-            font-size: .85em;
-            line-height: 1.2em;
+            font-size: 0.9em;
+            line-height: 1.1em;
             overflow: auto;
-            max-height: 200px;
-            cursor: pointer;
+            max-height: 300px;
+            background: #2c2827;
+            border: 2px solid #666;
+            border-radius: 2px;
+            code {
+                color: #a3a7a3;
+            }
         }
         ul.signature-nav {
             display: block;
@@ -274,7 +284,7 @@
         }
         .snippet {
             small {
-                font-size: 0.75em;
+                font-size: 1em;
             }
         }
         .propOptKey {
@@ -352,7 +362,7 @@
     }
 
     .markdown p code, .markdown li code {
-        font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+        font-family: "Source Code Pro", monospace;
         background-color: #f0f0f0;
         color: black;
         padding: 1px 3px;
@@ -364,7 +374,7 @@
 
     /* JSONEditor specific styling */
     .editor_holder {
-       font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+       font-family: "Source Code Pro", monospace;
        font-size: 0.9em;
         label {
             font-weight:normal!important; /* JSONEditor uses bold by default for all labels, we revert that back to normal to not give the impression that by default fields are required */
@@ -377,7 +387,9 @@
 
     input.parameter {
         width: 300px;
-        border: 1px solid #aaa;
+        border: 1px solid #ccc;
+        padding: 6px;
+        border-radius: 2px;
     }
 
     h1 {
@@ -385,7 +397,7 @@
         font-size: 1.5em;
         line-height: 1.3em;
         padding: 10px 0 10px 0;
-        font-family: "Droid Sans", sans-serif;
+        font-family: "Open Sans", sans-serif;
         font-weight: bold;
     }
 
@@ -438,7 +450,7 @@
     }
 
     .code {
-        font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+        font-family: "Source Code Pro", monospace;
     }
 
     form.formtastic {
@@ -446,7 +458,7 @@
             ol {
                 li.text {
                     textarea {
-                        font-family: "Droid Sans", sans-serif;
+                        font-family: "Open Sans", sans-serif;
                         height: 250px;
                         padding: 4px;
                         display: block;
@@ -523,7 +535,7 @@
             color: #666666;
         }
         pre {
-            font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+            font-family: "Source Code Pro", monospace;
             background-color: #fcf6db;
             border: 1px solid #e5e0c6;
             padding: 10px;
@@ -539,26 +551,23 @@
     }
 
     ul#resources {
-        font-family: "Droid Sans", sans-serif;
+        margin-top: 10px;
+        font-family: "Open Sans", sans-serif;
         font-size: 0.9em;
-
         li.resource {
-            border-bottom: 1px solid #dddddd;
-
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, .08);
+            box-shadow: 0 2px 1px rgba(0, 0, 0, .15);
+            padding: 20px;
             &:hover div.heading,
             &.active div.heading {
-                h2 a {
-                    color: black;
-                }
                 ul.options li a {
                     color: #555555;
                 }
             }
-
-            &:last-child {
-                border-bottom: none;
+            & + & {
+                margin-top: 20px;
             }
-
             div.heading {
                 border: 1px solid transparent;
                 float: none;
@@ -571,7 +580,6 @@
                     display: block;
                     clear: none;
                     float: right;
-                    margin: 14px 10px 0 0;
                     li {
                         float: left;
                         clear: none;
@@ -588,18 +596,13 @@
                             text-decoration: underline;
                             color: black;
                         }
-                    }
-
-                    li {
                         a:hover, a:active, a.active {
                             text-decoration: underline;
                         }
-
                         &:first-child,
                         &.first {
                             padding-left: 0;
                         }
-
                         &:last-child, &.last {
                             padding-right: 0;
                             border-right: none;
@@ -610,22 +613,20 @@
                     }
                 }
                 h2 {
-                    color: #999999;
-                    padding-left: 0;
+                    color: #444;
+                    padding: 0;
                     display: block;
                     clear: none;
                     float: left;
-                    font-family: "Droid Sans", sans-serif;
+                    font-family: "Open Sans", sans-serif;
                     font-weight: bold;
                     a {
-                        color: #999999;
-                    }
-                    a:hover {
-                        color: black;
+                        color: #444;
                     }
                 }
             }
             ul.endpoints {
+                margin-top: 20px;
                 li.endpoint {
                     ul.operations {
                         li.operation {
@@ -633,7 +634,7 @@
                             clear: both;
                             overflow: hidden;
                             display: block;
-                            margin: 0 0 10px;
+                            margin: 10px 0 0;
                             padding: 0;
                             div.heading {
                                 float: none;
@@ -642,6 +643,8 @@
                                 display: block;
                                 margin: 0;
                                 padding: 0;
+                                border: none;
+                                background: #eee;
                                 h3 {
                                     display: block;
                                     clear: none;
@@ -654,14 +657,16 @@
                                     span.path {
                                         padding-left: 10px;
                                         a {
+                                            position: relative;
+                                            top: 1px;
                                             color: black;
                                             text-decoration: none;
                                             &.toggleOperation.deprecated {
-                                              text-decoration: line-through;
+                                                text-decoration: line-through;
                                             }
-                                        }
-                                        a:hover {
-                                            text-decoration: underline;
+                                            &:hover {
+                                                text-decoration: underline;
+                                            }
                                         }
                                     }
                                     span.http_method {
@@ -671,15 +676,11 @@
                                             color: white;
                                             display: inline-block;
                                             width: 50px;
+                                            height: 28px;
+                                            line-height: 28px;
                                             font-size: 0.7em;
+                                            font-weight: bold;
                                             text-align: center;
-                                            padding: 7px 0 4px;
-                                            -moz-border-radius: 2px;
-                                            -webkit-border-radius: 2px;
-                                            -o-border-radius: 2px;
-                                            -ms-border-radius: 2px;
-                                            -khtml-border-radius: 2px;
-                                            border-radius: 2px;
                                         }
                                     }
                                     span {
@@ -712,25 +713,17 @@
                                 }
                             }
                             div.content {
-                                border-top: none;
                                 padding: 10px;
-                                -moz-border-radius-bottomleft: 6px;
-                                -webkit-border-bottom-left-radius: 6px;
-                                -o-border-bottom-left-radius: 6px;
-                                -ms-border-bottom-left-radius: 6px;
-                                -khtml-border-bottom-left-radius: 6px;
-                                border-bottom-left-radius: 6px;
-                                -moz-border-radius-bottomright: 6px;
-                                -webkit-border-bottom-right-radius: 6px;
-                                -o-border-bottom-right-radius: 6px;
-                                -ms-border-bottom-right-radius: 6px;
-                                -khtml-border-bottom-right-radius: 6px;
-                                border-bottom-right-radius: 6px;
-                                margin: 0 0 20px;
+                                background: #f2f2f2;
+                                box-shadow: inset 0 3px 6px -6px rgba(0, 0, 0, .8);
                                 h4 {
                                     font-size: 1.1em;
                                     margin: 0;
-                                    padding: 15px 0 5px;
+                                    padding: 30px 0 5px;
+
+                                    &:first-child {
+                                        padding-top: 10px
+                                    }
                                 }
                                 div.sandbox_header {
                                     float: none;
@@ -769,7 +762,7 @@
                                 div.response {
                                     div.block {
                                         pre {
-                                            font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+                                            font-family: "Source Code Pro", monospace;
                                             padding: 10px;
                                             font-size: 0.9em;
                                             max-height: 400px;
@@ -781,8 +774,6 @@
                         }
                         li.operation.put {
                             div.heading {
-                                background-color: #f9f2e9;
-                                border: 1px solid #f0e0ca;
                                 h3 {
                                     span.http_method {
                                         a {
@@ -802,24 +793,18 @@
                                 }
                             }
                             div.content {
-                                background-color: #faf5ee;
-                                border: 1px solid #f0e0ca;
                                 h4 {
                                     color: #c5862b;
                                 }
                                 div.sandbox_header {
                                     a {
                                         color: #dcb67f;
-
                                     }
                                 }
                             }
                         }
                         li.operation.head {
                             div.heading {
-                                background-color: #fcffcd;
-                                border: 1px solid black;
-                                border-color: #ffd20f;
                                 h3 {
                                     span.http_method {
                                         a {
@@ -840,9 +825,6 @@
                                 }
                             }
                             div.content {
-                                background-color: #fcffcd;
-                                border: 1px solid black;
-                                border-color: #ffd20f;
                                 h4 {
                                     color: #ffd20f;
                                 }
@@ -855,8 +837,6 @@
                         }
                         li.operation.delete {
                             div.heading {
-                                background-color: #f5e8e8;
-                                border: 1px solid #e8c6c7;
                                 h3 {
                                     span.http_method {
                                         a {
@@ -878,7 +858,6 @@
                                 }
                             }
                             div.content {
-                                background-color: #f7eded;
                                 border: 1px solid #e8c6c7;
                                 h4 {
                                     color: #a41e22;
@@ -892,8 +871,6 @@
                         }
                         li.operation.post {
                             div.heading {
-                                background-color: #e7f6ec;
-                                border: 1px solid #c3e8d1;
                                 h3 {
                                     span.http_method {
                                         a {
@@ -913,8 +890,6 @@
                                 }
                             }
                             div.content {
-                                background-color: #ebf7f0;
-                                border: 1px solid #c3e8d1;
                                 h4 {
                                     color: #10a54a;
                                 }
@@ -949,9 +924,6 @@
                                 }
                             }
                             div.content {
-                                background-color: #faf0ef;
-                                border: 1px solid #f0cecb;
-
                                 h4 {
                                     color: #D38042;
 
@@ -965,8 +937,6 @@
                         }
                         li.operation.get {
                             div.heading {
-                                background-color: #e7f0f7;
-                                border: 1px solid #c3d9ec;
                                 h3 {
                                     span.http_method {
                                         a {
@@ -986,8 +956,6 @@
                                 }
                             }
                             div.content {
-                                background-color: #ebf3f9;
-                                border: 1px solid #c3d9ec;
                                 h4 {
                                     color: #0f6ab4;
                                 }
@@ -1001,7 +969,6 @@
                         li.operation.options {
                             div.heading {
                                 background-color: #e7f0f7;
-                                border: 1px solid #c3d9ec;
                                 h3 {
                                     span.http_method {
                                         a {
@@ -1022,7 +989,6 @@
                             }
                             div.content {
                                 background-color: #ebf3f9;
-                                border: 1px solid #c3d9ec;
                                 h4 {
                                     color: #0f6ab4;
                                 }
@@ -1034,10 +1000,8 @@
                             }
                         }
                         li.operation {
+                            border-radius: 2px;
                             &.get, &.post, &.head, &.put, &.patch, &.delete {
-                                div.content {
-                                    border-top: none;
-                                }
                                 div.heading ul.options li {
                                     &:last-child, &.last {
                                         padding-right: 0;
@@ -1071,7 +1035,7 @@
         padding: 10px 0;
         font-size: 0.8em;
         border-top: 1px solid #dddddd;
-        font-family: "Droid Sans", sans-serif;
+        font-family: "Open Sans", sans-serif;
         color: #999999;
         font-style: italic;
         a {
@@ -1087,7 +1051,7 @@
     }
 
     .markdown ol, .markdown ul {
-        font-family: "Droid Sans", sans-serif;
+        font-family: "Open Sans", sans-serif;
         margin: 5px 0 10px;
         padding: 0 0 0 18px;
         list-style-type: disc;

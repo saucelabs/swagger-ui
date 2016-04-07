@@ -1,0 +1,15 @@
+/* 
+ * CSS and WOFF2 source: https://fonts.googleapis.com/css?family=Source+Code+Pro&subset=latin,latin-ext
+ * TTF downloaded from Google Fonts: https://www.google.com/fonts/specimen/Source+Code+Pro
+ * TTF converted to WOFF with: https://cloudconvert.com/ttf-to-woff
+ */
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'),
+  url(../fonts/SourceCodePro-Regular.woff2) format('woff2'),
+  url(../fonts/SourceCodePro-Regular.woff) format('woff'),
+  url(../fonts/SourceCodePro-Regular.ttf) format('truetype');
+}

@@ -134,28 +134,28 @@ window.Docs = {
 	expandEndpointListForResource: function(resource) {
 		var resource = Docs.escapeResourceName(resource);
 		if (resource == '') {
-			$('.resource ul.endpoints').slideDown();
+			$('.resource ul.endpoints').slideDown(200);
 			return;
 		}
 
 		$('li#resource_' + resource).addClass('active');
 
 		var elem = $('li#resource_' + resource + ' ul.endpoints');
-		elem.slideDown();
+		elem.slideDown(200);
 	},
 
 	// Collapse resource and mark as explicitly closed
 	collapseEndpointListForResource: function(resource) {
 		var resource = Docs.escapeResourceName(resource);
 		if (resource == '') {
-			$('.resource ul.endpoints').slideUp();
+			$('.resource ul.endpoints').slideUp(200);
 			return;
 		}
 
 		$('li#resource_' + resource).removeClass('active');
 
 		var elem = $('li#resource_' + resource + ' ul.endpoints');
-		elem.slideUp();
+		elem.slideUp(200);
 	},
 
 	expandOperationsForResource: function(resource) {
@@ -163,7 +163,7 @@ window.Docs = {
 		Docs.expandEndpointListForResource(resource);
 
 		if (resource == '') {
-			$('.resource ul.endpoints li.operation div.content').slideDown();
+			$('.resource ul.endpoints li.operation div.content').slideDown(200);
 			return;
 		}
 
@@ -177,7 +177,7 @@ window.Docs = {
 		Docs.expandEndpointListForResource(resource);
 
 		if (resource == '') {
-			$('.resource ul.endpoints li.operation div.content').slideUp();
+			$('.resource ul.endpoints li.operation div.content').slideUp(200);
 			return;
 		}
 
@@ -191,10 +191,10 @@ window.Docs = {
 	},
 
 	expandOperation: function(elem) {
-		elem.slideDown();
+		elem.slideDown(200);
 	},
 
 	collapseOperation: function(elem) {
-		elem.slideUp();
+		elem.slideUp(200);
 	}
 };

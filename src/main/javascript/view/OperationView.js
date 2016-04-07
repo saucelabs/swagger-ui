@@ -553,7 +553,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   // handler for hide response link
   hideResponse: function(e) {
     if (e) { e.preventDefault(); }
-    $('.response', $(this.el)).slideUp();
+    $('.response', $(this.el)).slideUp(200);
     $('.response_hider', $(this.el)).fadeOut();
   },
 
@@ -766,7 +766,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     $('.response_code', $(this.el)).html('<pre>' + response.status + '</pre>');
     $('.response_body', $(this.el)).html(response_body);
     $('.response_headers', $(this.el)).html('<pre>' + _.escape(JSON.stringify(response.headers, null, '  ')).replace(/\n/g, '<br>') + '</pre>');
-    $('.response', $(this.el)).slideDown();
+    $('.response', $(this.el)).slideDown(200);
     $('.response_hider', $(this.el)).show();
     $('.response_throbber', $(this.el)).hide();
 

@@ -1,8 +1,14 @@
+
+
 @import 'src/main/less/highlight_default.less';
 @import 'src/main/less/specs.less';
 @import 'src/main/less/auth.less';
 
 #header {
+    display: none;
+}
+
+#authentication {
     display: none;
 }
 
@@ -12,6 +18,11 @@
 
     .model-signature pre {
         max-height: none;
+        background: transparent;
+        border: none;
+        code {
+            color: inherit;
+        }
     }
 
     .body-textarea {

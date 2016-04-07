@@ -557,28 +557,28 @@ window.Docs = {
 	expandEndpointListForResource: function(resource) {
 		var resource = Docs.escapeResourceName(resource);
 		if (resource == '') {
-			$('.resource ul.endpoints').slideDown();
+			$('.resource ul.endpoints').slideDown(200);
 			return;
 		}
 
 		$('li#resource_' + resource).addClass('active');
 
 		var elem = $('li#resource_' + resource + ' ul.endpoints');
-		elem.slideDown();
+		elem.slideDown(200);
 	},
 
 	// Collapse resource and mark as explicitly closed
 	collapseEndpointListForResource: function(resource) {
 		var resource = Docs.escapeResourceName(resource);
 		if (resource == '') {
-			$('.resource ul.endpoints').slideUp();
+			$('.resource ul.endpoints').slideUp(200);
 			return;
 		}
 
 		$('li#resource_' + resource).removeClass('active');
 
 		var elem = $('li#resource_' + resource + ' ul.endpoints');
-		elem.slideUp();
+		elem.slideUp(200);
 	},
 
 	expandOperationsForResource: function(resource) {
@@ -586,7 +586,7 @@ window.Docs = {
 		Docs.expandEndpointListForResource(resource);
 
 		if (resource == '') {
-			$('.resource ul.endpoints li.operation div.content').slideDown();
+			$('.resource ul.endpoints li.operation div.content').slideDown(200);
 			return;
 		}
 
@@ -600,7 +600,7 @@ window.Docs = {
 		Docs.expandEndpointListForResource(resource);
 
 		if (resource == '') {
-			$('.resource ul.endpoints li.operation div.content').slideUp();
+			$('.resource ul.endpoints li.operation div.content').slideUp(200);
 			return;
 		}
 
@@ -614,11 +614,11 @@ window.Docs = {
 	},
 
 	expandOperation: function(elem) {
-		elem.slideDown();
+		elem.slideDown(200);
 	},
 
 	collapseOperation: function(elem) {
-		elem.slideUp();
+		elem.slideUp(200);
 	}
 };
 
@@ -785,7 +785,7 @@ this["Handlebars"]["templates"]["main"] = Handlebars.template({"1":function(dept
   var stack1, helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, buffer = "<div class='info' id='api_info'>\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.info : depth0), {"name":"if","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
-  buffer += "</div>\n<div class='container' id='resources_container'>\n  <div class='authorize-wrapper'></div>\n\n  <ul id='resources'></ul>\n\n  <div class=\"footer\">\n    <h4 style=\"color: #999\">[ <span style=\"font-variant: small-caps\">base url</span>: "
+  buffer += "</div>\n<div class='container' id='resources_container'>\n  <!-- <div class='authorize-wrapper'></div> -->\n\n  <ul id='resources'></ul>\n\n  <div class=\"footer\">\n    <h4 style=\"color: #999\">[ <span style=\"font-variant: small-caps\">base url</span>: "
     + escapeExpression(((helper = (helper = helpers.basePath || (depth0 != null ? depth0.basePath : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"basePath","hash":{},"data":data}) : helper)))
     + "\n";
   stack1 = helpers['if'].call(depth0, ((stack1 = (depth0 != null ? depth0.info : depth0)) != null ? stack1.version : stack1), {"name":"if","hash":{},"fn":this.program(14, data),"inverse":this.noop,"data":data});
@@ -20553,7 +20553,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   // handler for hide response link
   hideResponse: function(e) {
     if (e) { e.preventDefault(); }
-    $('.response', $(this.el)).slideUp();
+    $('.response', $(this.el)).slideUp(200);
     $('.response_hider', $(this.el)).fadeOut();
   },
 
@@ -20766,7 +20766,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     $('.response_code', $(this.el)).html('<pre>' + response.status + '</pre>');
     $('.response_body', $(this.el)).html(response_body);
     $('.response_headers', $(this.el)).html('<pre>' + _.escape(JSON.stringify(response.headers, null, '  ')).replace(/\n/g, '<br>') + '</pre>');
-    $('.response', $(this.el)).slideDown();
+    $('.response', $(this.el)).slideDown(200);
     $('.response_hider', $(this.el)).show();
     $('.response_throbber', $(this.el)).hide();
 
