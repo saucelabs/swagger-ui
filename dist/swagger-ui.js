@@ -557,28 +557,28 @@ window.Docs = {
 	expandEndpointListForResource: function(resource) {
 		var resource = Docs.escapeResourceName(resource);
 		if (resource == '') {
-			$('.resource ul.endpoints').slideDown(200);
+			$('.resource ul.endpoints').show();
 			return;
 		}
 
 		$('li#resource_' + resource).addClass('active');
 
 		var elem = $('li#resource_' + resource + ' ul.endpoints');
-		elem.slideDown(200);
+		elem.show();
 	},
 
 	// Collapse resource and mark as explicitly closed
 	collapseEndpointListForResource: function(resource) {
 		var resource = Docs.escapeResourceName(resource);
 		if (resource == '') {
-			$('.resource ul.endpoints').slideUp(200);
+			$('.resource ul.endpoints').hide();
 			return;
 		}
 
 		$('li#resource_' + resource).removeClass('active');
 
 		var elem = $('li#resource_' + resource + ' ul.endpoints');
-		elem.slideUp(200);
+		elem.hide();
 	},
 
 	expandOperationsForResource: function(resource) {
@@ -586,7 +586,7 @@ window.Docs = {
 		Docs.expandEndpointListForResource(resource);
 
 		if (resource == '') {
-			$('.resource ul.endpoints li.operation div.content').slideDown(200);
+			$('.resource ul.endpoints li.operation div.content').show();
 			return;
 		}
 
@@ -600,7 +600,7 @@ window.Docs = {
 		Docs.expandEndpointListForResource(resource);
 
 		if (resource == '') {
-			$('.resource ul.endpoints li.operation div.content').slideUp(200);
+			$('.resource ul.endpoints li.operation div.content').hide();
 			return;
 		}
 
@@ -614,11 +614,11 @@ window.Docs = {
 	},
 
 	expandOperation: function(elem) {
-		elem.slideDown(200);
+		elem.show();
 	},
 
 	collapseOperation: function(elem) {
-		elem.slideUp(200);
+		elem.hide();
 	}
 };
 
@@ -1245,7 +1245,7 @@ this["Handlebars"]["templates"]["resource"] = Handlebars.template({"1":function(
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var stack1, helper, options, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, blockHelperMissing=helpers.blockHelperMissing, buffer = "<div class='heading'>\n  <h2>\n    <a href='#!/"
     + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "' class=\"toggleEndpointList\" data-id=\""
+    + "' data-id=\""
     + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
     + "\">"
     + escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"name","hash":{},"data":data}) : helper)))
@@ -1255,22 +1255,16 @@ this["Handlebars"]["templates"]["resource"] = Handlebars.template({"1":function(
   if (stack1 != null) { buffer += stack1; }
   stack1 = ((helper = (helper = helpers.summary || (depth0 != null ? depth0.summary : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"summary","hash":{},"data":data}) : helper));
   if (stack1 != null) { buffer += stack1; }
-  buffer += "\n  </h2>\n  <ul class='options'>\n    <li>\n      <a href='#!/"
+  buffer += "\n  </h2>\n  <ul class='options'>\n    <li>\n      <a href='#' class=\"expandResource\" data-id=\""
     + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "' id='endpointListTogger_"
+    + "\" data-sw-translate>\n        Expand All\n      </a>\n    </li>\n    <li>\n      <a href='#' class=\"collapseResource\" data-id=\""
     + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "' class=\"toggleEndpointList\" data-id=\""
-    + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "\" data-sw-translate>Show/Hide</a>\n    </li>\n    <li>\n      <a href='#' class=\"collapseResource\" data-id=\""
-    + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "\" data-sw-translate>\n        List Operations\n      </a>\n    </li>\n    <li>\n      <a href='#' class=\"expandResource\" data-id=\""
-    + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "\" data-sw-translate>\n        Expand Operations\n      </a>\n    </li>\n";
+    + "\" data-sw-translate>\n        Collapse All\n      </a>\n    </li>\n";
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.url : depth0), {"name":"if","hash":{},"fn":this.program(3, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   return buffer + "  </ul>\n</div>\n<ul class='endpoints' id='"
     + escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"id","hash":{},"data":data}) : helper)))
-    + "_endpoint_list' style='display:none'>\n\n</ul>\n";
+    + "_endpoint_list'>\n\n</ul>\n";
 },"useData":true});
 this["Handlebars"]["templates"]["response_content_type"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
   var stack1, buffer = "";

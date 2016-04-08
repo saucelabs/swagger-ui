@@ -1,19 +1,16 @@
 <div class='heading'>
   <h2>
-    <a href='#!/{{id}}' class="toggleEndpointList" data-id="{{id}}">{{name}}</a> {{#summary}} : {{/summary}}{{{summary}}}
+    <a href='#!/{{id}}' data-id="{{id}}">{{name}}</a> {{#summary}} : {{/summary}}{{{summary}}}
   </h2>
   <ul class='options'>
     <li>
-      <a href='#!/{{id}}' id='endpointListTogger_{{id}}' class="toggleEndpointList" data-id="{{id}}" data-sw-translate>Show/Hide</a>
-    </li>
-    <li>
-      <a href='#' class="collapseResource" data-id="{{id}}" data-sw-translate>
-        List Operations
+      <a href='#' class="expandResource" data-id="{{id}}" data-sw-translate>
+        Expand All
       </a>
     </li>
     <li>
-      <a href='#' class="expandResource" data-id="{{id}}" data-sw-translate>
-        Expand Operations
+      <a href='#' class="collapseResource" data-id="{{id}}" data-sw-translate>
+        Collapse All
       </a>
     </li>
     {{#if url}}
@@ -23,6 +20,6 @@
     {{/if}}
   </ul>
 </div>
-<ul class='endpoints' id='{{id}}_endpoint_list' style='display:none'>
+<ul class='endpoints' id='{{id}}_endpoint_list'>
 
 </ul>
