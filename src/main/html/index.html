@@ -57,12 +57,14 @@
 					var auth = "Basic " + btoa(userName + ":" + passWord);
 					var basicAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", auth, "header");
 					window.swaggerUi.api.clientAuthorizations.add("basicAuth", basicAuth);
-					console.log("authorization added");
+					$('.authentication__label').show();
+				} else {
+					$('.authentication__label').hide();
 				}
 			}
 
-			$('#input_user').change(addApiKeyAuthorization);
-			$('#input_pass').change(addApiKeyAuthorization);
+			$('#input_user').keyup(addApiKeyAuthorization);
+			$('#input_pass').keyup(addApiKeyAuthorization);
 
 			window.swaggerUi.load();
 
@@ -117,7 +119,7 @@
 				<input class="authentication__input" placeholder="Username" id="input_user" name="user" type="text">
 				<input class="authentication__input" placeholder="API Key" id="input_pass" name="pass" type="text">
 
-				<button class="authentication__button">Add</button>
+				<label class="authentication__label">Active</label>
 			</form>
 		</div>
 	</section>
