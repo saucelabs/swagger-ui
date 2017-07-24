@@ -85,8 +85,8 @@
 				if (hostName.match(/^api.dev/)) {
 					return 'https://app.dev.testobject.org/api/rest/swagger.json';
 				}
-				if (hostName.match(/^myhost/)) {
-					return 'http://myhost.com:9000/rest/swagger.json';
+				if (hostName.match(/^localhost/)) {
+					return 'http://localhost:7070/api/rest/swagger.json';
 				}
 				throw 'unknown hostname';
 			}
