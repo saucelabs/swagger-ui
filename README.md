@@ -1,3 +1,6 @@
+> **Note:<br/>**
+> This fork is not maintained anymore
+
 # Swagger UI
 
 [![Build Status](https://travis-ci.org/swagger-api/swagger-ui.svg?branch=master)](https://travis-ci.org/swagger-api/swagger-ui)
